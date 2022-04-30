@@ -265,7 +265,7 @@ class PlayState extends MusicBeatState
 		{
 			case 'spooky': 
 			{
-				//curStage = 'spooky';
+				curStage = 'spooky';
 				halloweenLevel = true;
 
 				var hallowTex = Paths.getSparrowAtlas('halloween_bg');
@@ -282,7 +282,7 @@ class PlayState extends MusicBeatState
 			}
 			case 'philly': 
 			{
-				//curStage = 'philly';
+				curStage = 'philly';
 
 				var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('philly/sky'));
 				bg.scrollFactor.set(0.1, 0.1);
@@ -324,7 +324,7 @@ class PlayState extends MusicBeatState
 			}
 			case 'limo':
 			{
-				//curStage = 'limo';
+				curStage = 'limo';
 				defaultCamZoom = 0.90;
 
 				var skyBG:FlxSprite = new FlxSprite(-120, -50).loadGraphic(Paths.image('limo/limoSunset'));
@@ -371,7 +371,7 @@ class PlayState extends MusicBeatState
 			}
 			case 'mall':
 			{
-				//curStage = 'mall';
+				curStage = 'mall';
 
 				defaultCamZoom = 0.80;
 
@@ -427,7 +427,7 @@ class PlayState extends MusicBeatState
 			}
 			case 'mallEvil':
 			{
-				//curStage = 'mallEvil';
+				curStage = 'mallEvil';
 				var bg:FlxSprite = new FlxSprite(-400, -500).loadGraphic(Paths.image('christmas/evilBG'));
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.2, 0.2);
@@ -447,7 +447,7 @@ class PlayState extends MusicBeatState
 			}
 			case 'school':
 			{
-				//curStage = 'school';
+				curStage = 'school';
 
 				// defaultCamZoom = 0.9;
 
@@ -514,7 +514,7 @@ class PlayState extends MusicBeatState
 			}
 			case 'schoolEvil':
 			{
-				//curStage = 'schoolEvil';
+				curStage = 'schoolEvil';
 
 				var waveEffectBG = new FlxWaveEffect(FlxWaveMode.ALL, 2, -1, 3, 2);
 				var waveEffectFG = new FlxWaveEffect(FlxWaveMode.ALL, 2, -1, 5, 2);
