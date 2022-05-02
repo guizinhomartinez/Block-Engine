@@ -1817,10 +1817,13 @@ class PlayState extends MusicBeatState
 					{
 						healthTween(-0.05);
 						vocals.volume = 0;
-						misses++;
-						totalNotesHit -= 1;
-						combo = 0;
-						updateAccuracy();
+						if (!FlxG.save.data.practice)
+						{
+							misses++;
+							totalNotesHit -= 1;
+							combo = 0;
+							updateAccuracy();
+						}
 					}
 
 					daNote.active = false;
@@ -1891,7 +1894,8 @@ class PlayState extends MusicBeatState
 
 		if (isStoryMode)
 		{
-			campaignScore += songScore;
+			if (!FlxG.save.data.practice)
+				campaignScore += songScore;
 
 			storyPlaylist.remove(storyPlaylist[0]);
 
@@ -1990,10 +1994,13 @@ class PlayState extends MusicBeatState
 			totalNotesHit -= 0.8;
 			healthTween(-0.023);
 			daRating = 'shit';
-			score = 50;
-			shits++;
-			combo = 0;
-			misses++;
+			if (!FlxG.save.data.practice)
+			{
+				score = 50;
+				shits++;
+				combo = 0;
+				misses++;
+			}
 		}
 		else if (noteDiff > Conductor.safeZoneOffset * 0.75)
 		{
@@ -2035,7 +2042,8 @@ class PlayState extends MusicBeatState
 			grpNoteSplashes.add(recycledNote);
 		}
 
-		songScore += score;
+		if (!FlxG.save.data.practice)
+			songScore += score;
 
 		var pixelShitPart1:String = "";
 		var pixelShitPart2:String = '';
@@ -2324,9 +2332,12 @@ class PlayState extends MusicBeatState
 			}
 			combo = 0;
 
-			songScore -= 10;
-			misses++;
-			totalNotesHit -= 1;
+			if (!FlxG.save.data.practice)
+			{
+				songScore -= 10;
+				misses++;
+				totalNotesHit -= 1;
+			}
 
 			FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
 			// FlxG.sound.play(Paths.sound('missnote1'), 1, false);
@@ -2352,7 +2363,8 @@ class PlayState extends MusicBeatState
 					boyfriend.playAnim('singRIGHTmiss', true);
 			}
 
-			updateAccuracy();
+			if (!FlxG.save.data.practice)
+				updateAccuracy();
 			
 		}
 	}
@@ -2434,7 +2446,8 @@ class PlayState extends MusicBeatState
 				note.destroy();
 			}
 
-			updateAccuracy();
+			if (!FlxG.save.data.practice)
+				updateAccuracy();
 		}
 	}
 

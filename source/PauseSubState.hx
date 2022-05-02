@@ -118,6 +118,9 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.goods = 0;
 					PlayState.bads = 0;
 					PlayState.shits = 0;
+				case 'Practice Mode':
+					FlxG.save.data.practice == true;
+					FlxG.save.flush();
 			}
 		}
 
