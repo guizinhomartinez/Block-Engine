@@ -17,7 +17,8 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'/*, 'Practice Mode'*/];
+	public static var practice:Bool = true;
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -119,8 +120,8 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.bads = 0;
 					PlayState.shits = 0;
 				case 'Practice Mode':
-					FlxG.save.data.practice == true;
-					FlxG.save.flush();
+					//practice = false;
+					//no practice mode since im stupid and i cant program --gui
 			}
 		}
 
