@@ -57,6 +57,7 @@ class MainMenuState extends MusicBeatState
 		bg.scrollFactor.y = 0.18;
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
+		bg.flipx = true;
 		bg.screenCenter();
 		bg.antialiasing = true;
 		add(bg);
@@ -69,6 +70,7 @@ class MainMenuState extends MusicBeatState
 		magenta.scrollFactor.y = 0.18;
 		magenta.setGraphicSize(Std.int(magenta.width * 1.1));
 		magenta.updateHitbox();
+		magenta.flipX = true;
 		magenta.screenCenter();
 		magenta.visible = false;
 		magenta.antialiasing = true;
